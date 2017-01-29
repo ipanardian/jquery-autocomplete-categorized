@@ -35,6 +35,7 @@
 		options: {
             item: {
                 value,
+				label,
                 category
             },
 			focus: function(event, ui) {
@@ -61,13 +62,13 @@
 		          }
 	          	li = that._renderItemData(ul, item)
 	          	if (item[that.options.item.category]) {
-	            	li.attr("aria-label", item[that.options.item.category] + " : " + item[that.options.item.value])
+	            	li.attr("aria-label", item[that.options.item.category] + " : " + item[that.options.item.label])
 	          	}
 	    	})
 		},
 		_renderItem: function(ul, item) {
-			return $( "<li>" )	.attr("data-value", this.options.item.value)
-							    .append(this.options.item.value)
+			return $( "<li>" )	.attr("data-value", item[this.options.item.value])
+								.append(item[this.options.item.label])
 							    .appendTo(ul)
 		},
     })
