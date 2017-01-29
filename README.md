@@ -1,6 +1,6 @@
 # jQuery UI Autocomplete Categorized
 
-Enables users to quickly find and select from a categoized pre-populated list of values as they type, leveraging searching and filtering.
+Enables users to quickly find and select from a categorized pre-populated list of values as they type, leveraging searching and filtering.
 
 ## Usage
 ```js
