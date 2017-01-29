@@ -34,16 +34,18 @@
     $.widget("ardian.autocompleteCategorized", $.ui.autocomplete, {
 		options: {
             item: {
-                value,
-				label,
-                category
+                value: null,
+				label: null,
+                category: null
             },
 			focus: function(event, ui) {
-		        $(this).val(ui.item[this.options.item.value])
+				var item = $(this).autocompleteCategorized('option', 'item')
+		        $(this).val(ui.item[item.value])
 		    	return false
 			},
 			select: function(event, ui) {
-				$(this).val(ui.item[this.options.item.value]).data('item', ui.item)
+				var item = $(this).autocompleteCategorized('option', 'item')
+				$(this).val(ui.item[item.value]).data('item', ui.item)
 				return false
 			}
 		},
@@ -70,6 +72,6 @@
 			return $( "<li>" )	.attr("data-value", item[this.options.item.value])
 								.append(item[this.options.item.label])
 							    .appendTo(ul)
-		},
+		}
     })
 }))
