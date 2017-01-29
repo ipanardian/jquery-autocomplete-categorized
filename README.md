@@ -7,7 +7,8 @@ Enables users to quickly find and select from a categoized pre-populated list of
 $('#input-product').autocompleteCategorized({
     source: '//example.com/product',
     item: {
-        value: 'product_name',
+        label: 'product_name',
+        value: 'product_id',
         category: 'product_category'
     }
 })
